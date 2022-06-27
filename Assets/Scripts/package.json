@@ -1,0 +1,9 @@
+{
+    "name": "unibudoux",
+    "displayName": "UniBudouX",
+    "version": "0.1.0",
+    "unity": "2021.3",
+    "description": "BudouX(the machine learning powered line break organizer tool) for Unity.",
+    "license": "Apache-2.0",
+    "dependencies": {}
+}
