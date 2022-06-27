@@ -1,6 +1,6 @@
 # UniBudouX
 
-![cap1.png](/img/cap1.png)
+![cap1.png](https://github.com/Accky/UniBudouX/blob/main/doc/img/cap1.png)
 
 UniBudouX は [BudouX](https://github.com/google/budoux) (the machine learning powered line break organizer tool)をUnity上で使用できるように移植したものです。
 
@@ -15,8 +15,8 @@ Note:
 
 Package Managerの`Add package from git url...`を選び`https://github.com/Accky/UniBudouX.git?path=Assets/Scripts `を入力してください。
 
-![cap2.png](/img/cap2.png)
-![cap3.png](/img/cap3.png)
+![cap2.png](https://github.com/Accky/UniBudouX/blob/main/doc/img/cap2.png)
+![cap3.png](https://github.com/Accky/UniBudouX/blob/main/doc/img/cap3.png)
 
 または、`Packages/manifest.json`に`"com.accky.unibudoux": "https://github.com/Accky/UniBudouX.git?path=Assets/Scripts" `を追記してください。
 
@@ -73,11 +73,11 @@ public class WordWrapper : MonoBehaviour
 
 Button AとButton Bが配置されており、それぞれのボタンを押すことで表示テキストと表示範囲を変更することができます。
 
-![cap5.gif](/img/cap5.gif)
+![cap5.gif](https://github.com/Accky/UniBudouX/blob/main/doc/img/cap5.gif)
 
 またエディタで実行中に枠の大きさを手動で変更すると以下のような挙動になります。
 
-![cap4.gif](/img/cap4.gif)
+![cap4.gif](https://github.com/Accky/UniBudouX/blob/main/doc/img/cap4.gif)
 
 ## 含まれるアセット
 
