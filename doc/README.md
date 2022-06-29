@@ -39,6 +39,28 @@ List<string> chunks = Parser.Parse(text);
 
 分割した文字列は、WordWrapperコンポーネントを使用することで、TextMeshProUGUIの文字を自動改行させることができるようになっています。
 
+使用するモデルを変更する場合には以下のようにModeを変更するか、学習させたjsonファイルを読み込ませます。
+
+```csharp
+// 日本語モデルを利用する
+Parser.Mode = Parser.KnbcMode.Japanese;
+// 中国/韓国語モデルを利用する
+Parser.Mode = Parser.KnbcMode.ZnHans;
+```
+
+```csharp
+[SerializeField] private TextAsset jsonModel;
+
+private void Start()
+{
+    // Original Model Test
+    if (jsonModel == null) { return;}
+    Parser.MakeModel(jsonModel.text);
+}
+```
+
+独自モデルの出力については、[BucouXのCLIを利用して出力](https://github.com/google/budoux#building-a-custom-model)してください。
+
 ### WordWrapperコンポーネント
 
 RectTransformの幅に応じて読みやすい場所に改行コードを挟み込むコンポーネントです。TextMeshProUGUIを持つゲームオブジェクトに追加して使用します。

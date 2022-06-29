@@ -38,6 +38,28 @@ List<string> chunks = Parser.Parse(text);
 
 WordWrapper component uses chunks. They automatically break the characters in TextMeshProUGUI.
 
+If you need to change the model, change the Mode or use the trained json file.
+
+```csharp
+// Use Japanese model
+Parser.Mode = Parser.KnbcMode.Japanese;
+// Use ZnHans model
+Parser.Mode = Parser.KnbcMode.ZnHans;
+```
+
+```csharp
+[SerializeField] private TextAsset jsonModel;
+
+private void Start()
+{
+    // Original Model Test
+    if (jsonModel == null) { return;}
+    Parser.MakeModel(jsonModel.text);
+}
+```
+
+[Use the BucouX CLI](https://github.com/google/budoux#building-a-custom-model) to create your custom model.
+
 ### WordWrapper Component
 
 The WordWrapper component embeds a line feed code according to the width of the RectTransform. Used by adding to a game object that has TextMeshProUGUI.
