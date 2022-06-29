@@ -6,11 +6,26 @@ UniBudouX is [BudouX](https://github.com/google/budoux) (the machine learning po
 
 Note:
 This project contains the deliverables of the [BudouX](https://github.com/google/budoux) project.
+
 ## Unity Version
 
-Checi in Unity 2021.3.0f1.
+Confirmed the operation with Unity 2021.3.0f1.
 
-## Import
+## Demo
+
+Clone or download the project to run the demo. You can check the operation of UniBudou X + WordWrapper in DemoScene.
+
+You can change the display text and range by pressing the `Button A` and` Button B` buttons.
+
+![cap5.gif](/doc/img/cap5.gif)
+
+If you resize the frame while it's running in the editor, you'll see something like this:
+
+![cap4.gif](/doc/img/cap4.gif)
+
+## Usage
+
+### Import
 
 You can add `https://github.com/Accky/UniBudouX.git?path=Assets/Scripts ` to Package Manager.
 
@@ -19,7 +34,7 @@ You can add `https://github.com/Accky/UniBudouX.git?path=Assets/Scripts ` to Pac
 
 Or, add `"com.accky.unibudoux": "https://github.com/Accky/UniBudouX.git?path=Assets/Scripts" ` to `Packages/manifest.json`.
 
-## Usage
+### Scripting
 
 You can use the `UniBudouX Parser` by using the UniBudouX namespace.
 
@@ -60,7 +75,7 @@ private void Start()
 
 [Use the BucouX CLI](https://github.com/google/budoux#building-a-custom-model) to create your custom model.
 
-### WordWrapper Component
+#### WordWrapper Component
 
 The WordWrapper component embeds a line feed code according to the width of the RectTransform. Used by adding to a game object that has TextMeshProUGUI.
 
@@ -80,18 +95,6 @@ public class WordWrapper : MonoBehaviour
     }
     ...
 ```
-
-## Demo
-
-Clone or download the project to run the demo. You can check the operation of UniBudou X + WordWrapper in DemoScene.
-
-You can change the display text and range by pressing the `Button A` and` Button B` buttons.
-
-![cap5.gif](/doc/img/cap5.gif)
-
-If you resize the frame while it's running in the editor, you'll see something like this:
-
-![cap4.gif](/doc/img/cap4.gif)
 
 ## Assets
 
