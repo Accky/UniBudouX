@@ -75,6 +75,13 @@ private void Start()
 
 [Use the BucouX CLI](https://github.com/google/budoux#building-a-custom-model) to create your custom model.
 
+On Windows, you may get a string encoding error. If an error occurs, change line 50 of train.py and specify the encoding.
+
+```python
+  with open(entries_filename, encoding='utf-8') as f:
+    entries = [row.strip().split('\t') for row in f.read().splitlines()]
+```
+
 #### WordWrapper Component
 
 The WordWrapper component embeds a line feed code according to the width of the RectTransform. Used by adding to a game object that has TextMeshProUGUI.

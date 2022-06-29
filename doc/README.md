@@ -76,6 +76,13 @@ private void Start()
 
 独自モデルの出力については、[BucouXのCLIを利用して出力](https://github.com/google/budoux#building-a-custom-model)してください。
 
+Windowsでは文字列のエンコードエラーが出る可能性があります。エラーが出た場合にはtrain.py 50行目を修正してエンコードを指定してください。
+
+```python
+  with open(entries_filename, encoding='utf-8') as f:
+    entries = [row.strip().split('\t') for row in f.read().splitlines()]
+```
+
 #### WordWrapperコンポーネント
 
 RectTransformの幅に応じて読みやすい場所に改行コードを挟み込むコンポーネントです。TextMeshProUGUIを持つゲームオブジェクトに追加して使用します。
