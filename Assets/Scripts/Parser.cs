@@ -6,6 +6,7 @@ namespace UniBudouX
     {
         public enum KnbcMode
         {
+            Original,
             Japanese,
             ZnHans,
         }
@@ -18,7 +19,11 @@ namespace UniBudouX
             set
             {
                 mode = value;
-                model = mode == KnbcMode.Japanese ? KnbcJapan.Pairs : KnbcZnHans.Pairs;
+                
+                if (mode != KnbcMode.Original)
+                {
+                    model = mode == KnbcMode.Japanese ? KnbcJapan.Pairs : KnbcZnHans.Pairs;   
+                }
             }
         }
         
@@ -71,6 +76,26 @@ namespace UniBudouX
             }
 
             return chunks;
+        }
+        
+        public static void MakeModel(string jsonText)
+        {
+            mode = KnbcMode.Original;
+            model = new Dictionary<string, int>();
+
+            // BudouXで出力したjsonはJsonUtilityで読み込めないので独自解析
+            var txt = jsonText.Replace("{", "").Replace("}", "").Replace(", ", "\n");
+            
+            // StringReaderで行ごとに処理
+            System.IO.StringReader rs = new System.IO.StringReader(txt);
+            while (rs.Peek() > -1)
+            {
+                var line = rs.ReadLine();
+                if (line == null) { continue; }
+                var keyValue = line.Split(": ");
+                if (keyValue.Length <= 1) { continue;}
+                model.Add(keyValue[0].Replace("\"", ""), int.Parse(keyValue[1]));
+            }
         }
     }
 }

@@ -1,3 +1,5 @@
+using System;
+using UniBudouX;
 using UniBudouX.Components;
 using UnityEngine;
 
@@ -8,7 +10,15 @@ public class DemoController : MonoBehaviour
 {
     [SerializeField] private WordWrapper wordWrapper;
     [SerializeField] private RectTransform bgRectTransform;
-    
+    [SerializeField] private TextAsset jsonModel;
+
+    private void Start()
+    {
+        // Original Model Test
+        //if (jsonModel == null) { return;}
+        //Parser.MakeModel(jsonModel.text);
+    }
+
     // DEMO A
     [HeaderAttribute ("Button A")]
     [SerializeField][TextArea(6,6)] private string textA = @"";
