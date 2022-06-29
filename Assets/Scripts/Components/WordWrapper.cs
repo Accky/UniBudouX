@@ -9,7 +9,6 @@ namespace UniBudouX.Components
     [RequireComponent(typeof(TMP_Text))]
     public class WordWrapper : MonoBehaviour
     {
-        private string textCache = null;
         private TMP_Text tmpText = null;
         private RectTransform rectTransform = null;
         private List<string> chunks = null;
